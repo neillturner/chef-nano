@@ -82,7 +82,8 @@ array =  CSV.parse(response_text, :headers => true).map(&:to_hash).
 
 * CommandNotFoundException after running Chef Solo
 ```
- $env:systemdrive\opscode\chef\bin\chef-solo.bat --config $env:TEMP\kitchen\solo.rb --log_level debug --force-formatter --no-color --json-attributes $env:TEMP\kitchen\dna.json)
+ $env:systemdrive\opscode\chef\bin\chef-solo.bat --config $env:TEMP\kitchen\solo.rb --log_level debug 
+ --force-formatter --no-color --json-attributes $env:TEMP\kitchen\dna.json)
 
   FullyQualifiedId: CommandNotFoundException
      ExceptionName: System.Management.Automation.CommandNotFoundException
