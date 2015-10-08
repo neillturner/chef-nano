@@ -53,7 +53,7 @@ Enter-PSSession -Computername localhost -Port 55985 -Credential $creds
 
 ## Issues
 
-1. WinRM connectivity from Vagrant for Nano Server
+* WinRM connectivity from Vagrant for Nano Server
 The WinRM service in Nano currently only accepts requests set to the UTF-8 code page 65001. However, the WinRM Gem used by Vagrant sets the codepage to 437.
 This prevents vagrant from establishing WinRM connections with the nano box.
 to workaround this:
@@ -66,7 +66,7 @@ rename new C:\HashiCorp\Vagrant\embedded\gems\gems\winrm-1.3.5.dev as
 C:\HashiCorp\Vagrant\embedded\gems\gems\winrm-1.3.3
 ```
 
-2. Getting error 'Unquoted fields do not allow \r or \n (line 2)'
+* Getting error 'Unquoted fields do not allow \r or \n (line 2)'
 To workaround this problem:
 change winrm-transport-1.0.2\lib\winrm\transport\file_transporter.rb
 ```
@@ -80,7 +80,7 @@ response_text.delete!("\r")
 array =  CSV.parse(response_text, :headers => true).map(&:to_hash).
 ```
 
-3. CommandNotFoundException after running Chef Solo
+* CommandNotFoundException after running Chef Solo
 ```
  $env:systemdrive\opscode\chef\bin\chef-solo.bat --config $env:TEMP\kitchen\solo.rb --log_level debug --force-formatter --no-color --json-attributes $env:TEMP\kitchen\dna.json)
 
