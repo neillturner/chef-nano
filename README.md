@@ -1,4 +1,7 @@
-## DESCRIPTION
+# chef-nano
+
+
+## Description
 
 chef-repo for demostrating test-kitchen and chef-solo with nano server
 
@@ -7,7 +10,7 @@ it using a virtual box build by mwrock
 see http://www.hurryupandwait.io/blog/a-packer-template-for-windows-nano-server-weighing-300mb
 
 
-## PRE-REQUISITES
+## Pre-Requisites
 
 On your windows machine
 
@@ -48,7 +51,7 @@ Enter-PSSession -Computername localhost -Port 55985 -Credential $creds
 ```
 
 
-## ISSUES
+## Issues
 
 1. WinRM connectivity from Vagrant for Nano Server
 The WinRM service in Nano currently only accepts requests set to the UTF-8 code page 65001. However, the WinRM Gem used by Vagrant sets the codepage to 437.
@@ -59,11 +62,11 @@ copy winrm-1.3.5.dev from your gem folder to C:\HashiCorp\Vagrant\embedded\gems\
 
 remove the old C:\HashiCorp\Vagrant\embedded\gems\gems\winrm-1.3.3
 
-rename new C:\HashiCorp\Vagrant\embedded\gems\gems\winrm-1.3.5.dev as C:\HashiCorp\Vagrant\embedded\gems\gems\winrm-1.3.3
+rename new C:\HashiCorp\Vagrant\embedded\gems\gems\winrm-1.3.5.dev as 
+C:\HashiCorp\Vagrant\embedded\gems\gems\winrm-1.3.3
 ```
 
 2. Getting error 'Unquoted fields do not allow \r or \n (line 2)'
-
 To workaround this problem:
 change winrm-transport-1.0.2\lib\winrm\transport\file_transporter.rb
 ```
@@ -77,9 +80,8 @@ response_text.delete!("\r")
 array =  CSV.parse(response_text, :headers => true).map(&:to_hash).
 ```
 
-
 3. CommandNotFoundException after running Chef Solo
-
+```
  $env:systemdrive\opscode\chef\bin\chef-solo.bat --config $env:TEMP\kitchen\solo.rb --log_level debug --force-formatter --no-color --json-attributes $env:TEMP\kitchen\dna.json)
 
   FullyQualifiedId: CommandNotFoundException
@@ -87,5 +89,5 @@ array =  CSV.parse(response_text, :headers => true).map(&:to_hash).
        InnerExName: null
      Error Message: The term 'CgAkAGUAbgB2ADoAUABBAFQASAAgAD0AIABbAFMAeQBzAHQAZQ
        StackTrace: Check .\App_path\Stacktrace.txt for more information
-
+```
  This is currently outstanding
