@@ -10,7 +10,7 @@ it using a virtual box build by mwrock
 see http://www.hurryupandwait.io/blog/a-packer-template-for-windows-nano-server-weighing-300mb
 
 
-## Pre-Requisites
+## Installation
 
 On your windows machine
 
@@ -32,8 +32,15 @@ On your windows machine
 
 9. vagrant plugin install vagrant-winrm
 
+## Server Creation
 
-To connect via powershell, run:
+To create the server in a command window change directory to this folder and run:
+
+kitchen create base-WindowsNano
+
+## Connect to server via powershell
+
+run:
 ```
 # Enable powershell remoting if it is not already enabled
 Enable-PSRemoting -Force
