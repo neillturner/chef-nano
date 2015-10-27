@@ -98,4 +98,4 @@ array =  CSV.parse(response_text, :headers => true).map(&:to_hash).
      Error Message: The term 'CgAkAGUAbgB2ADoAUABBAFQASAAgAD0AIABbAFMAeQBzAHQAZQ
        StackTrace: Check .\App_path\Stacktrace.txt for more information
 ```
- This is currently outstanding
+ This is currently outstanding. Currently this early version of nano does not support encrypted communication which what the kitchen winrm works with. Laer version of nano will support encryption and then test-kitchen will work completely with Windows Nano. 
