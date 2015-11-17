@@ -1,6 +1,8 @@
 # chef-nano
 
-
+HACK1
+HACK2
+HACK3
 ## Description
 
 chef-repo for demostrating test-kitchen and chef-solo with nano server
@@ -69,7 +71,7 @@ copy winrm-1.3.5.dev from your gem folder to C:\HashiCorp\Vagrant\embedded\gems\
 
 remove the old C:\HashiCorp\Vagrant\embedded\gems\gems\winrm-1.3.3
 
-rename new C:\HashiCorp\Vagrant\embedded\gems\gems\winrm-1.3.5.dev as 
+rename new C:\HashiCorp\Vagrant\embedded\gems\gems\winrm-1.3.5.dev as
 C:\HashiCorp\Vagrant\embedded\gems\gems\winrm-1.3.3
 ```
 
@@ -89,7 +91,7 @@ array =  CSV.parse(response_text, :headers => true).map(&:to_hash).
 
 * CommandNotFoundException after running Chef Solo
 ```
- $env:systemdrive\opscode\chef\bin\chef-solo.bat --config $env:TEMP\kitchen\solo.rb --log_level debug 
+ $env:systemdrive\opscode\chef\bin\chef-solo.bat --config $env:TEMP\kitchen\solo.rb --log_level debug
  --force-formatter --no-color --json-attributes $env:TEMP\kitchen\dna.json)
 
   FullyQualifiedId: CommandNotFoundException
@@ -98,4 +100,4 @@ array =  CSV.parse(response_text, :headers => true).map(&:to_hash).
      Error Message: The term 'CgAkAGUAbgB2ADoAUABBAFQASAAgAD0AIABbAFMAeQBzAHQAZQ
        StackTrace: Check .\App_path\Stacktrace.txt for more information
 ```
- This is currently outstanding. Currently this early version of nano does not support encrypted communication which what the kitchen winrm works with. Laer version of nano will support encryption and then test-kitchen will work completely with Windows Nano. 
+ This is currently outstanding. Currently this early version of nano does not support encrypted communication which what the kitchen winrm works with. Laer version of nano will support encryption and then test-kitchen will work completely with Windows Nano.
