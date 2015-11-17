@@ -1,6 +1,7 @@
 # chef-nano
 
 HACK1
+HACK2
 ## Description
 
 chef-repo for demostrating test-kitchen and chef-solo with nano server
